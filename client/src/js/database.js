@@ -18,7 +18,8 @@ export const putDb = async (content) => {
   const tx = await jateDB.transaction('jate', 'readwrite');
   const store = await tx.objectStore('jate');
   const request = await store.put({ id: 1, value: content });
-  const result = await request
+  const result = await request;
+  console.log(result);
 
 }
 // TODO: Add logic for a method that gets all the content from the database
@@ -28,7 +29,7 @@ export const getDb = async () => {
   const store = await tx.objectStore('jate');
   const request = await store.get(1);
   const result = await request;
-
+  return result?.value;
 }
 
 initdb();

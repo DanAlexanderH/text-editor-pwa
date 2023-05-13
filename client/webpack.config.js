@@ -19,7 +19,8 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './index.html'
+        template: './index.html',
+        title: 'JATE'
       }),
 
       new WebpackPwaManifest({
@@ -31,11 +32,11 @@ module.exports = () => {
         theme_color: '#1e1e1e',
         start_url: '/',
         publicPath: '/',
-        fingerprints: 'false',
-        inject: 'true',
+        fingerprints: false,
+        inject: true,
         icons: [
             {
-              src: path.resolve('src/images/logo.png'),
+              src: path.resolve('./src/images/logo.png'),
               sizes: [96, 128, 192, 256, 384, 512],
               destination: path.join('assets', 'icons')
             }
@@ -43,9 +44,9 @@ module.exports = () => {
       }),
 
       new InjectManifest({
-        swSc: './src-sw.js',
-        swDest: 'service-worker.js'
-      })
+        swSrc: path.resolve(__dirname, 'src-sw.js'),
+        swDest: path.resolve(__dirname, 'dist', 'src-sw.js'),
+      }),
     ],
 
     module: {
