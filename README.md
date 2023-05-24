@@ -21,7 +21,7 @@ This project was designed to be a simple text editor that can either be used in 
 ## Installation
 To use the application, you can visit the deployed Heroku link listed below. Once you visit the link, you can either use to app natively on the webpage or click the install button to have the app installed onto your computer and run the app through there.
 
-insert link**
+https://glacial-headland-80951.herokuapp.com/
 <br>
 
 ## Usage
